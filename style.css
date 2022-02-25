@@ -1,0 +1,43 @@
+
+  
+
+.banner{
+    color: rgb(241, 241, 241);
+    background-color: #ff911b;
+}
+
+.bi-headphones{
+color:#ff911b;
+}
+
+
+
+  /* to top button */
+
+  #myBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color:rgba(35, 6, 48, 0.534); 
+    color: white; 
+    cursor: pointer; 
+    padding: 5px; 
+    border-radius: 5%; 
+    font-size: 23px;
+    
+    }
+
+    #myBtn:hover {
+    background-color: #555; 
+    }
+
+    ul li button{
+      border-radius: 20px;
+      border-color: rgb(34, 26, 26);
+      background-color: rgb(34, 26, 26);
+      color: white;
+    }
