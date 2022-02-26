@@ -501,7 +501,61 @@
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add track</button>
             </section>
 
-            
+            <!-- modal -->
+
+            <div id="myModal" class="modal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Add a new track</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-4 col-sm-4 pb-3">
+                        <div class="input">Track number</div>
+                      </div>
+                      <div class="col-8 col-sm-8 pb-3">
+                        <input id="trackNumber" type="text" placeholder="type here">
+                      </div>
+
+                      <div class="col-4 col-sm-4 pb-3">
+                        <div class="input">Track title  </div>
+                      </div>
+                      <div class="col-8 col-sm-8 pb-3">
+                        <input id="trackTitle" type="text" placeholder="type here">
+                      </div>
+
+                      <div class="col-4 col-sm-4 pb-3">
+                        <div class="input">Artist name  </div>
+                      </div>
+                      <div class="col-8 col-sm-8 pb-3">
+                        <input id="artist" type="text" placeholder="type here">
+                      </div>
+
+                      <div class="col-8 col-sm-4 pb-3">
+                        <div class="input">Track duration  </div>
+                      </div>
+                      <div class="col-4 col-sm-8 pb-3">
+                        <input id="trackDuration" type="text" placeholder="type here">
+                      </div>
+
+                    </div>
+                    <!-- <div class="input">Track number : <input id="trackNumber" type="text" placeholder="type here"> </div>
+                    <div class="input">Track title : <input id="trackTitle" type="text" placeholder="type here"> </div>
+                    <div class="input">Artist name : <input id="artist" type="text" placeholder="type here"> </div>
+                    <div class="input">Track duration : <input id="trackDuration" type="text" placeholder="type here"> </div> -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Add track</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
 
             <!-- favorite -->
             <section id="favorite" class="jumbotron bg-white text-center">
