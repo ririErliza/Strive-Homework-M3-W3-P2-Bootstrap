@@ -392,11 +392,123 @@
 
                 </div>
 
-                <section id="favorite" class="jumbotron bg-white text-center">
+            <!-- tracklist -->
+            <section id="trackList" class="jumbotron bg-white text-center">
+
+                  <h1>Tracklist</h1>
+                  <p class="lead text-muted"> Lorem ipsum dolor sit amet consectetur adipisicing elit. At doloribus sed consectetur asperiores. Itaque, in est. Veritatis maxime, officiis repellendus neque nulla temporibus dolore, dolores obcaecati, fugiat enim repudiandae dolor. </p>
+            </section>
+
+            <section id="myTrack">
+              <table id="myTable" class="table table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">Length</th>
+                    <th scope="col">Option</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>This Is Our Planet</td>
+                    <td>Steven Price</td>
+                    <td>3:43</td>
+                    <td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>The Numbers Build</td>
+                    <td>Steven Price</td>
+                    <td>5:04</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>They Work As A Team</td>
+                    <td>Steven Price</td>
+                    <td>3:41</td>
+                    <td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>In This Together</td>
+                    <td>Steven Price & Ellie Goulding</td>
+                    <td>4:43</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>The Next Twenty Years</td>
+                    <td>Steven Price</td>
+                    <td>1:41</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>A Greater Resilience</td>
+                    <td>Steven Price</td>
+                    <td>4:02</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Crucial To Their Survival</td>
+                    <td>Steven Price</td>
+                    <td>7:25</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Where Life Gathers</td>
+                    <td>Steven Price</td>
+                    <td>3:20</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>The Ocean Returns The Favour</td>
+                    <td>Steven Price</td>
+                    <td>2:20</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Too Big To Argue With</td>
+                    <td>Steven Price</td>
+                    <td>5:35</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>We Must Preserve What's Left</td>
+                    <td>Steven Price</td>
+                    <td>2:28</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>The Perfect Gift</td>
+                    <td>Steven Price</td>
+                    <td>2:53</td>
+                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add track</button>
+            </section>
+
+            
+
+            <!-- favorite -->
+            <section id="favorite" class="jumbotron bg-white text-center">
 
                     <h1>Favorite Picks</h1>
                     <p class="lead text-muted"> some favorite songs and album that i enjoy </p>
-                </section>
+            </section>
 
                 <div class="row row-cols-1 row-cols-md-3">
                   <div class="col col-lg-6 mb-4">
@@ -467,81 +579,9 @@
                     </div>
                   </div>
 
-                <section>
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Length</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>This Is Our Planet</td>
-                        <td>3:43</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>The Numbers Build</td>
-                        <td>5:04</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>They Work As A Team</td>
-                        <td>3:41</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td>In This Together</td>
-                        <td>4:43</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td>The Next Twenty Years</td>
-                        <td>1:41</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6</th>
-                        <td>A Greater Resilience</td>
-                        <td>4:02</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7</th>
-                        <td>Crucial To Their Survival</td>
-                        <td>7:25</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8</th>
-                        <td>Where Life Gathers</td>
-                        <td>3:20</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>The Ocean Returns The Favour</td>
-                        <td>2:20</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">10</th>
-                        <td>Too Big To Argue With</td>
-                        <td>5:35</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">11</th>
-                        <td>We Must Preserve What's Left</td>
-                        <td>2:28</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">12</th>
-                        <td>The Perfect Gift</td>
-                        <td>2:53</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </section>
+                
 
-
+                <!-- hall of shame -->
                 <section>
                   <section id="notFavorite" class="jumbotron bg-white text-center">
                       <h1>Hall of shame</h1>
@@ -643,6 +683,7 @@
     </main>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-chevron-up"></i></button>
+    
     <script>
         // to top function
 
@@ -660,6 +701,14 @@
         function topFunction() {
           document.body.scrollTop = 0; 
           document.documentElement.scrollTop = 0;
+        }
+
+
+        // delete table row
+
+        function deleteRow(r){
+          let i = r.parentNode.parentNode.rowIndex;
+          document.getElementById("myTable").deleteRow(i);
         }
         
         
