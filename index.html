@@ -423,7 +423,7 @@
                     <td>The Numbers Build</td>
                     <td>Steven Price</td>
                     <td>5:04</td>
-                    <td><button type="button" class="btn btn-danger"onclick="deleteRow(this)">Delete</button></td>
+                    <td><button type="button" class="btn btn-danger deleteButton"onclick="deleteRow(this)">Delete</button></td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
@@ -518,7 +518,7 @@
                         <div class="input">Track number</div>
                       </div>
                       <div class="col-8 col-sm-8 pb-3">
-                        <input id="trackNumber" type="text" placeholder="type here">
+                        <input id="trackNumber" type="number" placeholder="type here">
                       </div>
 
                       <div class="col-4 col-sm-4 pb-3">
@@ -543,13 +543,10 @@
                       </div>
 
                     </div>
-                    <!-- <div class="input">Track number : <input id="trackNumber" type="text" placeholder="type here"> </div>
-                    <div class="input">Track title : <input id="trackTitle" type="text" placeholder="type here"> </div>
-                    <div class="input">Artist name : <input id="artist" type="text" placeholder="type here"> </div>
-                    <div class="input">Track duration : <input id="trackDuration" type="text" placeholder="type here"> </div> -->
+                    
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Add track</button>
+                    <button id="entry" type="button" class="btn btn-primary">Submit</button>
                   </div>
                 </div>
               </div>
@@ -764,6 +761,64 @@
           let i = r.parentNode.parentNode.rowIndex;
           document.getElementById("myTable").deleteRow(i);
         }
+
+
+        /* Function for adding data to table tracklist */ //but why are they gone when page is refreshed
+
+        //get button element by id 
+        let entry = document.getElementById("entry")
+
+        //creating a click event for that button
+        entry.addEventListener("click",addTrack);
+
+       let row= 13;
+
+        function addTrack(){
+          // get the value from input elements (typed by user)
+          let trackNumber = document.getElementById("trackNumber").value;
+          let trackTitle = document.getElementById("trackTitle").value;
+          let artist = document.getElementById("artist").value;
+          let trackDuration = document.getElementById("trackDuration").value;
+
+           // delete button for each row
+          let deleteButton = document.createElement("button");
+          let txt = document.createTextNode("Delete");
+          deleteButton.className = "btn btn-danger";
+          deleteButton.setAttribute('id', 'deleteThis')
+          deleteButton.appendChild(txt);
+
+      
+          // get table element
+          let myTable = document.getElementById("myTable");
+
+          // create new row and cells and then append them to table
+          let newRow = myTable.insertRow(row);
+
+          let cell1 = newRow.insertCell(0); // insert this cell at position 1
+          let cell2 = newRow.insertCell(1); // insert this cell at position 2
+          let cell3 = newRow.insertCell(2); // insert this cell at position 3
+          let cell4 = newRow.insertCell(3); // insert this cell at position 4
+          let cell5 = newRow.insertCell(4); // insert this cell at position 5
+
+          //insert the value to cells
+          cell1.innerHTML = trackNumber;
+          cell2.innerHTML = trackTitle;
+          cell3.innerHTML = artist;
+          cell4.innerHTML = trackDuration;
+          
+          // append deleteButton to cell5
+          cell5.appendChild(deleteButton);
+
+        row++; //to increment the row otherwise it will just replace one another when button is clicked
+
+        }
+
+        
+
+        
+
+      
+
         
         
     </script>
