@@ -16,6 +16,62 @@
     <link rel="stylesheet" href="style.css">
 
     <title>My Music</title>
+
+    
+
+<!-- 
+  EXERCISES:
+  
+v 1) Create a Jumbotron section with a quick explanation / image of the website.
+
+ 
+
+v 2) Use a Bootstrap Card to contain every album in the favorite list you previously created.
+
+Use the elements of a card bootstrap gives you, to display nicely the album information such as: album title, artist, year, etc..
+
+ 
+
+v 3) For every album in the favorite list, attach a badge on the top-left corner of the album with the genre of the music.
+
+ 
+
+v 4) Create a new section with an album tracklist inside a Bootstrap table. The row colors of the table must be alternated. There should be a column for the track order number, one for the title, one for the artist name and one for the track duration. (you can also add extra columns)
+
+ 
+
+v 5) Add a DELETE button (bootstrap btn danger) at the end of each row of the tracklist. Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
+
+ 
+
+v 6) Add an "Add Track" button under the tracklist of the album.
+
+It should have a nice shadow transition when it gets hovered (with the box-shadow property) to look as if the button was elevating itself up. (you can search for more effects and add more) 
+
+7) On the click of "Add Track" button, a modal should appear.
+  (check in the documentation the modal + button example)
+      
+
+v The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
+
+Track number
+Track title
+Artist Name
+Track duration
+x The fields should be inside an Input Group and divided in 2 columns.
+
+
+EXTRA 
+
+The modal should contain 2 buttons at the bottom:
+
+v Add => Adds a new track in the tracklist with the data from the input fields. (requires DOM manipulation)
+Close => closes the modal
+When a new track is added, notify the user with an alert message containing the name of the track
+
+
+
+-->
   </head>
 
 <body>
@@ -400,7 +456,7 @@
             </section>
 
             <section id="myTrack">
-              <table id="myTable" class="table table-bordered text-center">
+              <table id="myTable" class="table table-bordered text-center table-striped">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -546,6 +602,7 @@
                     
                   </div>
                   <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button id="entry" type="button" class="btn btn-primary">Submit</button>
                   </div>
                 </div>
@@ -565,6 +622,7 @@
                   <div class="col col-lg-6 mb-4">
                     <div class="card h-100">
                       <img src="https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/fa/52/dd/fa52ddb2-730b-c79d-4b6d-9590a9d75e52/pr_source.png/800x800cc.jpg" class="card-img-top" alt="sia">
+                      <div class="badge">Electropop</div>
                       <div class="card-body">
                         <h5 class="card-title">Never Give Up</h5>
                         <p class="card-text">Artist: Sia</p>
@@ -576,6 +634,7 @@
                   <div class="col col-lg-6 mb-4">
                     <div class="card h-100">
                       <img src="https://static.qobuz.com/images/covers/83/32/0060075343283_600.jpg" class="card-img-top" alt="scorpions">
+                      <div class="badge">Hard rock</div>
                       <div class="card-body">
                         <h5 class="card-title">Wind of Change</h5>
                           <p class="card-text">Artist: Scorpions</p>
@@ -587,6 +646,7 @@
                   <div class="col col-lg-6 mb-4">
                     <div class="card h-100">
                       <img src="http://images.genius.com/51bdfd3ece1d6bd2238996fb4f97b59b.640x640x1.jpg" class="card-img-top" alt="Tim Bendzko">
+                      <div class="badge">Pop</div>
                       <div class="card-body">
                         <h5 class="card-title">Keine Maschine</h5>
                           <p class="card-text">Artist: Tim Bendzko</p>
@@ -598,6 +658,7 @@
                   <div class="col col-lg-6 mb-4">
                     <div class="card h-100">
                       <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Kansas-dust-in-the-wind.jpg" class="card-img-top" alt="Kansas">
+                      <div class="badge">Rock</div>
                       <div class="card-body">
                         <h5 class="card-title">Dust in The Wind</h5>
                           <p class="card-text">Artist: Kansas</p>
@@ -682,7 +743,7 @@
                             <div class="card mb-3 mr-5" style="max-width: 500px;">
                               <div class="row">
                                 <div class="col-12 col-lg-6">
-                                  <img src="https://i1.wp.com/hypebeast.com/image/ht/2014/08/nicki-minaj-anaconda-2.png?w=960" class="card-img" alt="">
+                                  <img src="https://th.bing.com/th/id/OIP.3ANnk_Ul1JyCSKuBUXyQmQHaHa?pid=ImgDet&rs=1" class="card-img" alt="">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                   <div class="card-body">
@@ -763,15 +824,18 @@
         }
 
 
-        /* Function for adding data to table tracklist */ //but why are they gone when page is refreshed
+        /* Function for adding data to table tracklist */ //(but why are they gone when page is refreshed?)
 
-        //get button element by id 
-        let entry = document.getElementById("entry")
-
-        //creating a click event for that button
+// get the button first and then add click event, when button is clicked addTrack function is clicked
+         
+        let entry = document.getElementById("entry");
         entry.addEventListener("click",addTrack);
 
-       let row= 13;
+
+
+
+//function to add track to table (but only worked if i dont delete the 12th row)
+       let row= 13; //because the table already has 12 rows made before 
 
         function addTrack(){
           // get the value from input elements (typed by user)
@@ -783,8 +847,6 @@
            // delete button for each row
           let deleteButton = document.createElement("button");
           let txt = document.createTextNode("Delete");
-          deleteButton.className = "btn btn-danger";
-          deleteButton.setAttribute('id', 'deleteThis')
           deleteButton.appendChild(txt);
 
       
@@ -808,10 +870,11 @@
           
           // append deleteButton to cell5
           cell5.appendChild(deleteButton);
+          cell5.innerHTML='<input class = "btn btn-danger" type="button" value="Delete" onclick="deleteRow(this)"/>';
 
         row++; //to increment the row otherwise it will just replace one another when button is clicked
 
-        }
+        } 
 
         
 
